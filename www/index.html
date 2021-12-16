@@ -13,6 +13,8 @@
     let ncmb = new NCMB(appKey, clientKey);
     let UTdata = ncmb.DataStore("UpdateTest");
     let key = "score";
+    
+    //let play="title";
 
 
     function enterData() {
@@ -30,8 +32,31 @@
           $("#display").addClass("bg-warning");
           $("#display").html("enter fail");
         })
+       /* .setIncrement("title","score"){
+
+        }*/
     }
 
+  /*  function insaidData(){
+      let uTdata = new UTdata();
+      let value = parseInt($("#data").val());
+      uTdata.set(play, value)
+      .save()
+        .then(function(results) {
+          $("#display").removeClass();
+          $("#display").addClass("bg-success");
+          $("#display").html("enter success");
+        })
+        .catch(function(results) {
+          $("#display").removeClass();
+          $("#display").addClass("bg-warning");
+          $("#display").html("enter fail");
+        })
+        .setIncrement("title","score"){
+          
+        } 
+    }*/
+ 
     function fetchAll() {
       UTdata.fetchAll()
         .then(function(results) {
@@ -124,14 +149,18 @@ function deleteData() {
 
 <body>
   <h1 class="text-light bg-secondary">mbaas update</h1>
+
+
+ <div>
+    <input type="text" id="title" placeholder="曲名">
+    <a onclick="insaidData()" class="btn btn-outline-secondary" role="button">Enter</a>
+  </div>
+
   <div>
     <input type="text" id="data" placeholder="スコア">
     <a onclick="enterData()" class="btn btn-outline-secondary" role="button">Enter</a>
   </div>
-  <div>
-    <input type="text" id="title" placeholder="曲名">
-    <a onclick="insaidData()" class="btn btn-outline-secondary" role="button">Enter</a>
-  </div>
+
   <div>
     <a onclick="fetchAll()" class="btn btn-outline-secondary" role="buton">Fetch All</a>
     <a onclick="sortData()" class="btn btn-outline-secondary" role="button">Sort</a>
