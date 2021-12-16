@@ -14,6 +14,7 @@
     let UTdata = ncmb.DataStore("UpdateTest");
     let key = "score";
 
+
     function enterData() {
       let uTdata = new UTdata();
       let value = parseInt($("#data").val());
@@ -126,6 +127,10 @@ function deleteData() {
   <div>
     <input type="text" id="data" placeholder="スコア">
     <a onclick="enterData()" class="btn btn-outline-secondary" role="button">Enter</a>
+  </div>
+  <div>
+    <input type="text" id="title" placeholder="曲名">
+    <a onclick="insaidData()" class="btn btn-outline-secondary" role="button">Enter</a>
   </div>
   <div>
     <a onclick="fetchAll()" class="btn btn-outline-secondary" role="buton">Fetch All</a>
